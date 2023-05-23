@@ -10,8 +10,8 @@ const timeElement = document.querySelector('.time');
 let timeInterval;
 let watch = {
   hour: 0,
-  min: 0,
-  sec: 0
+  min: 59,
+  sec: 50
 };
 let isIntervalOngoing = false;
 timeElement.innerHTML = getTime();
@@ -68,21 +68,17 @@ document.querySelector('.start-button')
       if (watch.sec === 60) {
         watch.min += 1;
         watch.sec = 0;
-      } else if (watch.min === 60) {
+      }
+
+      if (watch.min === 60) {
         watch.hour += 1;
-        watch.hour = 0;
+        watch.min = 0;
       }
 
       timeElement.innerHTML = getTime();
     }, 1000);
     }
   );
-
-
-  // document.querySelector('.stop-button')
-  // .addEventListener('click', () => {
-  //   resetInterval();
-  // });
 
   document.querySelector('.reset-button')
   .addEventListener('click', () => {
