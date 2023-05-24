@@ -10,8 +10,8 @@ const timeElement = document.querySelector('.time');
 let timeInterval;
 let watch = {
   hour: 0,
-  min: 59,
-  sec: 50
+  min: 0,
+  sec: 0
 };
 let isIntervalOngoing = false;
 timeElement.innerHTML = getTime();
